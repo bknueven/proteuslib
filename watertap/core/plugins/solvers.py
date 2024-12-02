@@ -105,6 +105,8 @@ class _WaterTAPSolverWrapper(abc.ABC):
             self.options["bound_relax_factor"] = 0.0
         if "honor_original_bounds" not in self.options:
             self.options["honor_original_bounds"] = "no"
+        if "bound_push" not in self.options:
+            self.options["bound_push"] = 1e-10
 
         if not self._is_user_scaling():
             self._set_options(solver)
